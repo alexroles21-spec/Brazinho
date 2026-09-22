@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1win - Bônus de 500% no Primeiro Depósito!</title>
+    <meta name="description" content="Gire a roleta agora e ganhe um super bônus de cassino e apostas na 1win!">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f172a 0%, #1e1b4b 100%);
+            color: #ffffff;
+            font-family: 'Inter', sans-serif;
+            overflow-x: hidden;
+        }
+        .glow-effect {
+            box-shadow: 0 0 25px rgba(234, 179, 8, 0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col items-center justify-between p-4">
+
+    <!-- Header / Logos -->
+    <header class="w-full max-w-md flex flex-col items-center pt-6 text-center">
+        <div class="flex items-center gap-3 mb-2">
+            <!-- 1win Logo Mock / Text -->
+            <span class="text-3xl font-ext500 tracking-wider text-yellow-400 font-black italic">1<span class="text-blue-500">WIN</span></span>
+            <span class="bg-yellow-500/20 text-yellow-400 text-xs px-2 py-1 rounded-full font-semibold border border-yellow-500/30">PARCEIRO OFICIAL</span>
+        </div>
+        <h1 class="text-2xl font-bold mt-2 text-white">Gire e ganhe <span class="text-yellow-400">500% de Bônus</span> agora!</h1>
+        <p class="text-xs text-gray-400 mt-1">Cassino, Aviator, Apostas Esportivas e muito mais.</p>
+    </header>
+
+    <!-- Main Content / Roulette Section -->
+    <main class="w-full max-w-md flex flex-col items-center my-6 relative">
+        
+        <!-- Tries Counter -->
+        <div id="tries-container" class="bg-slate-800/80 border border-slate-700 px-4 py-1.5 rounded-full text-sm font-medium text-yellow-400 mb-4 shadow-md">
+            Restam <span id="tries-count">2</span> tentativas
+        </div>
+
+        <!-- Roulette Box -->
+        <div class="relative w-72 h-72 sm:w-80 sm:h-80 bg-gradient-to-b from-blue-900/40 to-slate-900 border-4 border-yellow-500/50 rounded-full flex flex-col items-center justify-center p-6 text-center glow-effect transition-all duration-500" id="roulette-box">
+            
+            <!-- Initial State (Before Spin) -->
+            <div id="roulette-initial" class="flex flex-col items-center">
+                <div class="text-5xl mb-3 animate-bounce">🎰</div>
+                <p class="text-sm text-gray-300 font-medium mb-4">Toque no botão abaixo para rodar e garantir seu prêmio exclusivo!</p>
+                <button onclick="spinRoulette()" class="bg-gradient-to-r from-yellow-500 to-amber-600 hover:from-yellow-400 hover:to-amber-500 text-slate-950 font-black px-8 py-3 rounded-xl shadow-lg transform active:scale-95 transition-all text-base uppercase tracking-wider">
+                    GIRAR AGORA 🚀
+                </button>
+            </div>
+
+            <!-- Result State (After Spin) -->
+            <div id="roulette-result" class="hidden flex flex-col items-center animate-fade-in">
+                <span class="text-xs uppercase tracking-widest text-emerald-400 font-bold mb-1">Parabéns! Você ganhou:</span>
+                <div class="text-3xl font-black text-yellow-400 my-1 drop-shadow-md">BÔNUS DE 500%</div>
+                <p class="text-xs text-gray-300 mb-4">+ Giro Grátis no Aviator & Cassino!</p>
+                
+                <!-- Promo Code Box -->
+                <div class="bg-slate-950/80 border border-yellow-500/40 px-3 py-2 rounded-lg w-full mb-3 flex items-center justify-between">
+                    <span class="text-xs text-gray-400">Promo Code:</span>
+                    <span id="promo-code-text" class="text-yellow-400 font-bold tracking-wider select-all">THERECH21</span>
+                </div>
+
+                <!-- Action Button -->
+                <a href="https://lkhe.cc/6ea631" target="_blank" class="w-full bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-400 hover:to-green-500 text-slate-950 font-black py-3 rounded-xl shadow-lg text-center uppercase tracking-wide text-sm transition-all transform hover:scale-105">
+                    RESGATAR BÔNUS 💰
+                </a>
+            </div>
+
+        </div>
+    </main>
+
+    <!-- Footer / Security Info -->
+    <footer class="w-full max-w-md text-center text-xs text-gray-500 pb-4">
+        <p>🔞 Proibido para menores de 18 anos. Jogue com responsabilidade.</p>
+        <p class="mt-1">© 2026 1win. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- JavaScript for Spin Interaction -->
+    <script>
+        let tries = 2;
+
+        function spinRoulette() {
+            if (tries <= 0) return;
+            
+            tries--;
+            document.getElementById('tries-count').innerText = tries;
+
+            const box = document.getElementById('roulette-box');
+            const initialDiv = document.getElementById('roulette-initial');
+            const resultDiv = document.getElementById('roulette-result');
+
+            // Simple spin animation effect
+            box.style.transform = "rotate(360deg) scale(1.05)";
+            box.style.transition = "all 0.8s ease-in-out";
+
+            setTimeout(() => {
+                box.style.transform = "rotate(0deg) scale(1)";
+                initialDiv.classList.add('hidden');
+                resultDiv.classList.remove('hidden');
+            }, 800);
+        }
+    </script>
+</body>
+</html>
